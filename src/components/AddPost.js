@@ -15,7 +15,7 @@ class AddPost extends Component{
     handleSubmit = (e) =>{
         e.preventDefault();
         this.props.addPost(this.state)
-        this.props.history.push('/posts')
+        this.props.history.push('/')
     }    
 
     render(){

@@ -11,8 +11,10 @@ class UpdatePost extends Component{
     componentWillMount(){
         this.setState({
             data: this.props.posts.filter( post => {
-            this.state.post_title = post.title; 
-            this.state.post_desc = post.body;    
+            if(post.id === Number(this.props.match.params.id)){
+                this.state.post_title = post.title; 
+                this.state.post_desc = post.body; 
+            }   
             return post.id === Number(this.props.match.params.id)
         })
      });
@@ -42,8 +44,8 @@ class UpdatePost extends Component{
                     <label className="active" htmlFor="post_title">Post Title</label>
                     </div>
                     <div className="input-field col s12">
-                    <textarea id="post_desc" className="materialize-textarea" value={this.state.post_desc} onChange={this.handleChange}></textarea>
                     <label htmlFor="post_desc">Post Description</label>
+                    <textarea id="post_desc" className="materialize-textarea" value={this.state.post_desc} onChange={this.handleChange}></textarea>
                     </div>
                     <div className="input-field col s12">
                     <button className="btn">Update Post</button>
