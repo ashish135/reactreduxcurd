@@ -14,8 +14,9 @@ code {
 }
 .postimg {
   position: absolute;
-  bottom: 0;
+  bottom: 17px;
   left: -80px;
+  border-radius: 10px;
 }.posts .card {
   padding-left: 60px;
 }.main-container{

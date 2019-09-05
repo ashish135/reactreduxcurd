@@ -43,7 +43,7 @@ class Posts extends Component {
         return(
             
                 <div className="posts">
-                    <h2 className="blue-text">News <input onChange={this.handleChange} style={{width:250, marginLeft:80}} type="text" placeholder="Search posts..." /> <a href="/addpost" className="btn right">Add new Post</a></h2>
+                    <h2 className="blue-text">Posts <input onChange={this.handleChange} style={{width:250, marginLeft:80}} type="text" placeholder="Search posts..." /> <a href="/addpost" className="btn right">Add new Post</a></h2>
                     <h5><span className="new badge" data-badge-caption="result found">{newlist.length}</span></h5>
                     <br />
                     { postlist }
