@@ -35,7 +35,7 @@ class Contact extends React.Component{
         );
     return(
 
-        <div className="container">
+        <div className="main-container container">
             <h2 className="blue-text">Contact</h2>
             <div className="row">
                 <form className="col s12" action="" method="GET" onSubmit={this.handleSubmit}>
@@ -68,7 +68,7 @@ class Contact extends React.Component{
 
                 </form>
             </div>
-            <h3 className="blue-text">Contacts</h3>       
+            <h3 className="blue-text">Records</h3>       
                 <table>
                  <thead>
                     <tr><th>Name</th><th>Email</th><th>Address</th></tr>    

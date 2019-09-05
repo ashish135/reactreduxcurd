@@ -6,6 +6,14 @@ export const deletePost = (id) => {
     }
 }
 
+export const updatePost = (data) => {
+
+    return {
+        type: "UPDATE_POST",
+        data
+    }
+}
+
 export const addPost = (data) => {
     return {
         type: "ADD_POST",

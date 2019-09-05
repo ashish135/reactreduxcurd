@@ -2,11 +2,18 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import postImg from './../assets/blog.jpg';
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import {deletePost,searchPost,updateList} from './../actions/postActions';
+import {updatePost, deletePost,searchPost,updateList} from './../actions/postActions';
 
 class Posts extends Component {
     handleDelete = (e) => {
         this.props.deletePost(e.target.id);
+    }
+    handleUpdate = (e) => {
+        this.props.updatePost(e.target.id);
+    }
+    postUpdate = (e) => {
+        console.log(e.target.id);
+        this.props.history.push('/update/'+e.target.id)
     }
     handleChange = (e) => {
         const searchText = e.target.value.toLowerCase();
@@ -23,6 +30,7 @@ class Posts extends Component {
                 <div className="card" key={post.id}>
                     <div className="card-content">
                         <button id={post.id} onClick={this.handleDelete} className="btn red right">Delete</button>
+                        <button id={post.id} onClick={this.postUpdate} className="btn red right">Update</button>
                         <h5 className="blue-text"><Link to={'/post/'+post.id}>{ post.title }</Link></h5>
                         <img width="150" className="postimg" src={postImg} alt={post.title} />
                         <p>{post.body}<Link to={'/post/'+post.id}> read more...</Link></p>
@@ -55,6 +63,9 @@ const mapDispatchToProps = (dispatch) =>{
     return {
         deletePost: (id) => {
             dispatch(deletePost(id))
+        },
+        updatePost: (id) => {
+            dispatch(updatePost(id))
         },
         searchPost: (text) =>{
             dispatch(searchPost(text))

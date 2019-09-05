@@ -8,10 +8,10 @@ class Single extends Component {
         const {post} = this.props;
         return(
             <div className="">
-                <div className="container">
+                <div className="main-container container">
                 <div className="card">
                     <div className="card-content">
-                    <Link to="/posts" className="btn">Back</Link>
+                    <Link to="/" className="btn">Back</Link>
                         <h3 className="blue-text">{post.title}</h3>
                         <img src={postImg} alt={post.title}/>
                         <p>{post.body}</p>

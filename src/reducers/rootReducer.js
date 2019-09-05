@@ -48,7 +48,20 @@ function rootReducer(state = initState, action){
       ...state,
       newlist: newpostlist
     }
-  } else if(action.type === 'ADD_POST') {
+  } else if(action.type === 'UPDATE_POST'){
+      let newpostlist = state.newlist.filter( item => {
+        if(item.id === action.data.post_id)
+      {
+        item.title = action.data.post_title;
+        item.body = action.data.post_desc;
+
+      } });
+      return{
+      ...state,
+      newlist: newpostlist
+    }
+  } 
+  else if(action.type === 'ADD_POST') {
     return{
       ...state,
       posts: [...state.posts, action.post]

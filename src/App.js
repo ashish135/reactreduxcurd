@@ -9,6 +9,7 @@ import AddPost from './components/AddPost';
 import Contact from './components/Contact';
 import Rainbow from './hoc/Rainbow';
 import Single from './components/Single';
+import UpdatePost from './components/UpdatePost';
 
   
 
@@ -19,10 +20,11 @@ class App extends Component {
         <div className="App">
             <Header bgcolorname={this.props.bgColorName} />
               <div className="container">
-                <Route exact path='/' component={Home} />
+                <Route exact path='/' component={Posts} />
                 <Route path='/about' component={About} />
-                <Route path='/posts' component={Posts} />
+                <Route path='/home' component={Home} />
                 <Route path='/addpost' component={AddPost} />
+                <Route path='/update/:id' component={UpdatePost} />
                 <Route path='/contact' component={Contact} />
                 <Route path='/post/:id' component={Single} />
               </div>
